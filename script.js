@@ -2,10 +2,8 @@ document.addEventListener("DOMContentLoaded", function() {
     // Asegúrate de que Html5QrcodeScanner esté definido
     if (typeof Html5QrcodeScanner !== "undefined") {
         function onScanSuccess(qrCodeMessage) {
-            document.getElementById('result').innerText = 
-                                                `<a data-label="Register" href="${qrCodeMessage}" class="rainbow-hover">
-                                                    <span class="sp">ir al link</span>
-                                                </a>`;
+            document.getElementById('result').href = qrCodeMessage;
+            document.getElementById('ocult').classList.remove('ocult');
         }
 
         function onScanError(errorMessage) {
